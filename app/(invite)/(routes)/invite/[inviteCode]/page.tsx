@@ -49,5 +49,10 @@ export default async function InvitePage({ params }: InvitePageProps) {
       },
     },
   });
-  return <div>Hello Invite</div>;
+
+  if (server) {
+    return redirect(`/servers/${server.id}`);
+  }
+
+  return null;
 }
